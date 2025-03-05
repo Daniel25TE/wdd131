@@ -1,0 +1,60 @@
+Copy code
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    height: 100vh; 
+    margin: 0;
+}
+
+header {
+    grid-row: 1;
+    background: #333;
+    color: white;
+    padding: 30px;
+    text-align: left;
+}
+
+nav {
+    grid-row: 1;
+    background: black;
+}
+
+nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav li {
+    flex: 1;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 300px; 
+    grid-row: 2;
+    height: 300px;
+}
+
+.main-content {
+    background: lightgray;
+    padding: 20px;
+}
+
+aside {
+    background: white;
+    padding: 20px;
+}
+
+footer {
+    
+    background: #333;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    margin-top: auto;
+}
