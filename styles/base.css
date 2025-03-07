@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box; /* Include padding and border in the total size */
+}
+
+body {
+    display: grid;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #003366; /* Dark blue */
+    color: white;
+    
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    padding: 0; /* Remove default padding */
+    list-style-type: none; /* Remove list points */
+    background-color: aquamarine;
+    margin: 0;
+    padding: 10px;
+    
+    
+}
+
+nav ul li {
+    flex: 1; /* Allow items to distribute evenly */
+    
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block; /* Make the clickable area larger */
+    padding: 10px; /* Add padding to links */
+}
+
+nav a:hover {
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 20px;
+    width: 90%;
+}
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 10fr 5fr;
+    grid-gap: 20px;
+    
+    
+}
+
+h2 {
+    background-color: blue;
+    color: white; /* Ensure text is visible */
+    margin: 0; /* Remove margin */
+    padding: 20px; /* Add padding for spacing inside the h2 */
+    border-top-right-radius: 15px;;
+    border-top-left-radius: 15px;
+    text-align: center;
+}
+
+section {
+    background-color: rgb(255, 255, 255);
+    padding: 0px; /* Adjust padding */
+    
+    border-radius: 15px; /* Rounded corners */
+}
+#my-image {
+    
+    border: 2px solid blue;
+    margin-left: 630px;
+    margin-top: 30px;/* Example style for the selected image */
+}
+#ecuador {
+    border: 2px solid blue; /* Example style for the selected image */
+    margin-left: 10px;
+
+}
+h3 {
+    text-align: center;
+}
+#paragraph-1 {
+    color:#003366;
+    padding: 10px;
+    text-align: left;
+    margin-right: 230px;
+    margin-top: -250px;
+    margin-bottom: 150px;
+
+}
+#paragraph-2 {
+    color:#003366;
+    padding: 10px;
+    text-align: left;
+    
+    margin-left: 330px;
+    margin-top: -200px;
+    margin-bottom: 150px;
+
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #003366;
+    color: white;
+    position: relative;
+    clear: both;
+    bottom: 0;
+    width: 100%;
+}
