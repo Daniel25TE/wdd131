@@ -1,26 +1,26 @@
 * {
-    box-sizing: border-box; /* Include padding and border in the total size */
+    box-sizing: border-box;
 }
 
 body {
     display: grid;
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
 header {
-    background-color: #003366; /* Dark blue */
+    background-color: #003366;
     color: white;
-    
     text-align: center;
 }
 
 nav ul {
     display: flex;
-    padding: 0; /* Remove default padding */
-    list-style-type: none; /* Remove list points */
+    padding: 0;
+    list-style-type: none;
     background-color: aquamarine;
     margin: 0;
     padding: 10px;
@@ -29,16 +29,30 @@ nav ul {
 }
 
 nav ul li {
-    flex: 1; /* Allow items to distribute evenly */
+    flex: 1;
+
     
 }
 
 nav a {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    display: block; /* Make the clickable area larger */
-    padding: 10px; /* Add padding to links */
+    display: block;
+    padding: 0px;
 }
+a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+    margin: 10px 0;
+    
+}
+#devto {
+    color: black;
+    margin-top: 190px;
+}
+
 
 nav a:hover {
     border: 1px solid #fff;
@@ -49,66 +63,66 @@ main {
     display: grid;
     grid-template-columns: auto auto;
     padding: 20px;
-    width: 90%;
+    max-width: 100%;
 }
 
 .grid-container {
     display: grid;
     width: 100%;
     grid-template-columns: 10fr 5fr;
-    grid-gap: 20px;
+    gap: 20px;
     
     
 }
 
 h2 {
     background-color: blue;
-    color: white; /* Ensure text is visible */
-    margin: 0; /* Remove margin */
-    padding: 20px; /* Add padding for spacing inside the h2 */
+    color: white;
+    margin: 0;
+    padding: 20px;
     border-top-right-radius: 15px;;
     border-top-left-radius: 15px;
     text-align: center;
+    
 }
 
 section {
     background-color: rgb(255, 255, 255);
-    padding: 0px; /* Adjust padding */
+    padding: 0px;
     
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 15px;
 }
 #my-image {
     
     border: 2px solid blue;
     margin-left: 630px;
-    margin-top: 30px;/* Example style for the selected image */
+    margin-top: 30px;
 }
 #ecuador {
-    border: 2px solid blue; /* Example style for the selected image */
+    border: 2px solid blue;
     margin-left: 10px;
 
 }
 h3 {
     text-align: center;
 }
-#paragraph-1 {
-    color:#003366;
-    padding: 10px;
-    text-align: left;
-    margin-right: 230px;
-    margin-top: -250px;
-    margin-bottom: 150px;
-
-}
+#paragraph-1,
 #paragraph-2 {
-    color:#003366;
+    color: #003366;
     padding: 10px;
     text-align: left;
-    
-    margin-left: 330px;
-    margin-top: -200px;
     margin-bottom: 150px;
+    
+}
 
+#paragraph-1 {
+    margin-right: 230px;
+    margin-top: -250px; 
+}
+
+#paragraph-2 {
+    margin-left: 330px; 
+    margin-top: -200px; 
 }
 footer {
     text-align: center;
