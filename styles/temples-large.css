@@ -1,6 +1,7 @@
 @media(min-width: 40em) {
     #menu {
 		display: none;
+        
 	}
     .gallery {
         display: grid;
