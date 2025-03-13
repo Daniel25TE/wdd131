@@ -78,7 +78,7 @@ nav {
 img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 25px 150px;
     margin-bottom: 1rem;
 }
 
