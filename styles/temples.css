@@ -16,11 +16,12 @@ header {
 main {
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 nav {
     max-width: 700px;
     margin: 1rem auto;
-    background-color: #ace;
+    
 
 }
 #menu {
@@ -45,6 +46,7 @@ nav {
 	list-style: none;
 	background-color: #333;
 	color: #fff;
+    border-radius: 30px 150px;
 }
 .navigation a {
 	display: none;
