@@ -49,6 +49,10 @@ header {
     top: 20px;
     left: 20px;
 }
+.data ul {
+    list-style-type: none; 
+    padding-left: 0; 
+}
 
 .weather {
     bottom: 20px;
