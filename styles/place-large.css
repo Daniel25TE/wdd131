@@ -1,6 +1,24 @@
-@media screen and (min-width: 40em) {
+@media(max-width: 500px) {
+    
+    
     .data, .weather {
-        width: 100%;
-        height: 100%;
+        position: relative; 
+        width: 90%; 
+        margin: 10px auto; 
+    }
+
+    .data {
+        top: auto; 
+        left: auto; 
+    }
+
+    .weather {
+        bottom: auto;
+        right: auto; 
+    }
+
+    .footer {
+        position: relative;
+        margin-top: 20px; 
     }
 }
