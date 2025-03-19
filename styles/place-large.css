@@ -1,28 +1,11 @@
 @media(max-width: 500px) {
-    .container {
-        display: flex; /* Use flexbox */
-        flex-direction: column; /* Stack items in a column */
-        height: auto; /* Allow height to adjust based on content */
+    .hero img {
+        width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
     }
-    
+
     .data, .weather {
-        position: relative; 
-        width: 90%; 
-        margin: 10px auto; 
-    }
-
-    .data {
-        top: auto; 
-        left: auto; 
-    }
-
-    .weather {
-        bottom: auto;
-        right: auto; 
-    }
-
-    .footer {
-        position: relative;
-        margin-top: 20px; 
+        width: 90%; /* Make sections take up most of the width */
+        margin: 10px auto; /* Center the sections with margin */
     }
 }
