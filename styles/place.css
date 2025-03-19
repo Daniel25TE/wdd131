@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #e03e2d; 
-    --secondary-color: #007A33; 
-    --background-color: #ffffff; 
+    --primary-color: #eeff00; 
+    --secondary-color: #fa0000; 
+    --background-color: rgb(0, 78, 196); 
 }
 
 body {
@@ -14,7 +14,7 @@ main {
 }
 header {
     background-color: var(--primary-color);
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 20px;
     text-align: center;
 }
@@ -52,6 +52,6 @@ header {
 footer {
     padding: 10px;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
     background-color: var(--primary-color);
 }
