@@ -3,6 +3,7 @@
         display: flex; /* Use flexbox for the container */
         flex-direction: column; /* Stack items in a column */
         height: auto; /* Allow height to adjust based on content */
+        align-items: center;
     }
 
     .hero {
@@ -19,5 +20,11 @@
         position: relative; /* Change to relative for stacking */
         width: 90%; /* Make sections take up most of the width */
         margin: 10px auto; /* Center the sections with margin */
+        background-color: blue;
+        top : 0;
+        left : 0;
+        right : 0;
+        bottom : 0;
     }
+    
 }
