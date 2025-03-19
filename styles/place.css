@@ -9,7 +9,9 @@ body {
     background-color: var(--background-color);
     color: #333;
 }
-
+main {
+    height: 100%;
+}
 header {
     background-color: var(--primary-color);
     color: white;
@@ -53,5 +55,5 @@ footer {
     padding: 10px;
     text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--primary-color);
 }
