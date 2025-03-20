@@ -1,25 +1,25 @@
 @media(max-width: 500px) {
     .container {
-        display: flex; /* Use flexbox for the container */
-        flex-direction: column; /* Stack items in a column */
-        height: auto; /* Allow height to adjust based on content */
+        display: flex; 
+        flex-direction: column; 
+        height: auto; 
         align-items: center;
     }
 
     .hero {
-        position: relative; /* Change to relative for stacking */
-        width: 100%; /* Make the hero section full width */
+        position: relative; 
+        width: 100%; 
     }
 
     .hero img {
-        width: 100%; /* Make the image responsive */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%; 
+        height: auto; 
     }
 
     .data, .weather {
-        position: relative; /* Change to relative for stacking */
-        width: 90%; /* Make sections take up most of the width */
-        margin: 10px auto; /* Center the sections with margin */
+        position: relative; 
+        width: 90%; 
+        margin: 10px auto; 
         background-color: blue;
         top : 0;
         left : 0;
@@ -28,5 +28,24 @@
         text-align: center;
         
     }
-    
+    .weather-icon-mobile {
+        display: block; 
+        width: 50px; 
+        height: auto; 
+        margin: 10px auto; 
+    }
+    .weather-icon {
+        display: none; 
+    }
+}
+@media (min-width: 501px) {
+    h2::after {
+        content: "⛅";
+        font-size: 24px; 
+        margin-left: 10px; 
+    }
+
+    .weather-icon-mobile {
+        display: none; 
+    }
 }

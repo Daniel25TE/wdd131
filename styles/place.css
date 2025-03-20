@@ -9,9 +9,10 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: var(--background-color);
     color: #333;
+    
 }
 main {
     height: 100%;
@@ -21,6 +22,7 @@ header {
     color: rgb(0, 0, 0);
     padding: 20px;
     text-align: center;
+    font-weight: 500;
 }
 
 .container {

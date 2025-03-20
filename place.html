@@ -8,6 +8,9 @@
     <script src="scripts/place.js" defer></script>
     <meta name="description" content="This is the place page">
     <meta name="author" content="Daniel Alejandro Llumiquinga Dominguez">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -18,13 +21,13 @@
     <main>
         
         <div class="container">
-            <section class="hero">
+            <div class="hero">
                 <picture>
                     <source srcset="images/iguana-larger-view.webp" media="(min-width: 1000px)">
                     <source srcset="images/iguana-desktop-view-medium.webp" media="(min-width: 500px)">
                     <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
                 </picture>
-            </section>
+            </div>
             
             <section class="data">
                 <h2>Data</h2>
@@ -41,17 +44,19 @@
             </section>
     
             <section class="weather">
-                <h2>Weather <span class="weather-icon" aria-hidden="true">⛅</span></h2>
-                <p>Temperature: <span id="temperature">10 °C</span></p>
+                <h2>Weather</h2>
+                <img src="images/1530391_weather_clouds_sun_sunny_icon.svg" alt="Partly Cloudy Icon" class="weather-icon-mobile">
+                <p>Temperature: <span id="temperature">10 °F</span></p>
                 <p>Conditions: <span id="conditions">Partly Cloudy</span></p>
-                <p>Wind: <span id="wind">5 km/h</span></p>
+                <p>Wind: <span id="wind">5 mph</span></p>
                 <p>Wind Chill: <span id="windChill">N/A</span></p>
+                
             </section>
         </div>
     </main>
 
     <footer>
-        &copy; <span id="currentyear"></span> Daniel Llumiquinga, Utah - United States.
+        &copy; <span id="currentYear"></span> Daniel Llumiquinga, Utah - United States.
         <p>Last Modification: <span id="lastModified"></span></p>
     </footer>
 </body>
