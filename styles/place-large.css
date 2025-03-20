@@ -39,7 +39,7 @@
     }
 }
 @media (min-width: 501px) {
-    h2::after {
+    h3::after {
         content: "⛅";
         font-size: 24px; 
         margin-left: 10px; 
