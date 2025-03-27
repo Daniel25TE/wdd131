@@ -1,0 +1,107 @@
+body {
+    
+    margin: 0;
+    background-color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+header {
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+nav {
+    max-width: 700px;
+    margin: 1rem auto;
+    
+
+}
+#menu {
+    font-size: 1.5rem;
+	border: 0;
+	background: none;
+	color: #fff;
+ 	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+#menu::before {
+	content: "☰";
+}
+#menu.open::before {
+	content: "❎";
+}
+.navigation {
+    display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	list-style: none;
+	background-color: #333;
+	color: #fff;
+    border-radius: 30px 150px;
+}
+.navigation a {
+	display: none;
+	padding: 1rem;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+.navigation a:hover {
+	background-color: #bbb;
+	color: #333;
+	font-weight: 500;
+}
+
+.open a {
+	display: block;
+}
+
+.res-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    
+    
+}
+section {
+    background-color: #e4d9d9;
+    padding: 1rem;
+  /* border-radius: 25px 150px;*/
+    border: 0.0001em solid #b6afaf;
+}
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px 150px;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.3);
+    animation: fade 3s;
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+footer{
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
