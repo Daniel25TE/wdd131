@@ -13,12 +13,12 @@ hamButton.addEventListener("click", () => {
 });
 const temples = [
     {
-      templeName: "Aba Nigeria Temple",
+      templeName: "Albuquerque Temple",
       location: "Aba, Nigeria",
       dedicated: "2005, August, 7",
       area: 11500,
       imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
+      "images/billings_temple_lds.webp"
     },
     {
       templeName: "Manti Utah Temple",
@@ -26,7 +26,7 @@ const temples = [
       dedicated: "1888, May, 21",
       area: 74792,
       imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
+      "images/brisbane_australia_temple_lds.webp"
     },
     {
       templeName: "Payson Utah Temple",
@@ -34,7 +34,7 @@ const temples = [
       dedicated: "2015, June, 7",
       area: 96630,
       imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
+      "images/bountiful_temple_lds.webp"
     },
     {
       templeName: "Yigo Guam Temple",
@@ -42,7 +42,7 @@ const temples = [
       dedicated: "2020, May, 2",
       area: 6861,
       imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
+      "images/billings_temple_lds.webp"
     },
     {
       templeName: "Washington D.C. Temple",
@@ -50,7 +50,7 @@ const temples = [
       dedicated: "1974, November, 19",
       area: 156558,
       imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
+      "images/bountiful_temple_lds.webp"
     },
     {
       templeName: "Lima Perú Temple",
@@ -58,7 +58,7 @@ const temples = [
       dedicated: "1986, January, 10",
       area: 9600,
       imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
+      "images/brisbane_australia_temple_lds.webp"
     },
     {
       templeName: "Mexico City Mexico Temple",
@@ -66,16 +66,15 @@ const temples = [
       dedicated: "1983, December, 2",
       area: 116642,
       imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
+      "images/brisbane_australia_temple_lds.webp"
     },
-    // Add more temple objects here...
     {
         templeName: "Madrid Spain Temple",
         location: "Madrid, Spain",
         dedicated: "1999, March, 20",
         area: 45800,
         imageUrl:
-        "https://www.churchofjesuschrist.org/imgs/b0695278af88e03701eac449cba57686e21b080f/full/3840%2C/0/default.jpg"
+        "images/brisbane_australia_temple_lds.webp"
     },
     {
         templeName: "Natal Brazil Temple",
@@ -83,7 +82,7 @@ const temples = [
         dedicated: "2025, May, 17",
         area: 19800,
         imageUrl:
-        "https://newsroom.churchofjesuschrist.org/media/960x720/2023-10-24-Natal_Brazil_Temple_Exterior-Entry.jpg"
+        "images/bountiful_temple_lds.webp"
     },
     {
         templeName: "Cali Colombia Temple",
@@ -91,7 +90,7 @@ const temples = [
         dedicated: "2025, March, 1",
         area: 9500,
         imageUrl:
-        "https://www.churchofjesuschrist.org/imgs/d595efd5205e11ecac0eeeeeac1e10ba43576aeb/full/800%2C/0/default.jpg"
+        "images/brisbane_australia_temple_lds.webp"
     },
   ];
 
@@ -139,6 +138,8 @@ function createTempleCard(filteredTemples) {
     img.setAttribute("src", temple.imageUrl);
     img.setAttribute("alt", "${temple.templeName} Temple");
     img.setAttribute("loading", "lazy");
+    img.setAttribute("width", "340");
+    img.setAttribute("height", "440");
 
     card.appendChild(name);
     card.appendChild(location);
