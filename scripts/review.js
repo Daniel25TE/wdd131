@@ -1,3 +1,9 @@
+const currentYear = new Date().getFullYear();
+document.getElementById('currentyear').textContent = currentYear;
+
+const lastModified = document.lastModified;
+document.getElementById('lastModified').textContent = `Last Modified: ${lastModified}`;
+
 const visitsDisplay = document.querySelector(".visits");
 
 // 2️⃣ Get the stored VALUE for the numVisits-ls KEY in localStorage if it exists. If the numVisits KEY is missing, then assign 0 to the numVisits variable.

@@ -1,0 +1,178 @@
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+    background-color: #ffffff;
+    
+}
+form {
+    background-color: #d2c7ec;
+    border-radius: 6px;
+    padding: .5rem 1%;
+    
+}
+
+header {
+    padding: .5rem 2%;
+    background-color: #23044b;
+    margin-bottom: 1rem;
+}
+h1{
+    margin: 30px;
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-weight: bold
+}
+
+
+main {
+    margin-bottom: 1rem;
+    min-height: 20rem;
+}
+.thanks {
+    background-color: #d2c7ec;
+    border-radius: 6px;
+    padding: 1rem 2%;
+    margin: 1rem 2%;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    text-align: center;
+    
+}
+.wf1 fieldset {
+    margin: 1rem 1rem;
+    border: 1px solid #aaa5a5;
+    border-radius: 6px;
+    padding: 1rem 2%;
+}
+.wf1 legend {
+    color: blue;
+    padding: 0 .5rem;
+}
+.wf1 label {
+    display:block;
+    padding: .3rem;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+.wf1 div {
+    padding-bottom: 1rem;
+    color: blue;
+    font-size: .9rem;
+}
+
+.wf1 input[type="date"],
+.wf1 select,
+
+.wf1 input[type="text"]{
+    background-color: #eee;
+    display: block;
+    border: solid 1px #999;
+    border-radius: 6px;
+    padding: .75rem;
+    color: #555;
+    width: 100%;
+    max-width: 400px;
+    appearance: none;
+}
+textarea {
+    background-color: #eee;
+    display: block;
+    border: solid 1px #999;
+    border-radius: 6px;
+    padding: .75rem;
+    color: #555;
+    width: 100%;
+    max-width: 400px;
+    height: 10rem;
+    appearance: none;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+    width: 160px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 10px 0;
+    position: relative;
+  }
+ 
+  .star-rating input {
+    display: none;
+  }
+
+  .star-rating > label {
+    width: 30px;
+    height: 30px;
+    font-family: Arial;
+    font-size: 30px;
+    transition: 0.2s ease;
+    color: rgb(0, 0, 0);
+  }
+
+  .star-rating label:hover {
+    color: #ff69b4;
+    transition: 0.2s ease;
+  }
+  .star-rating label:active::before {
+    transform:scale(1.1);
+  }
+  
+
+  .star-rating label::before {
+    content: '\2606';
+    position: absolute;
+    top: 0px;
+    line-height: 26px;
+  }
+
+  .star-rating input:checked ~ label:before {
+    content:'\2605';
+  }
+  
+  @-moz-document url-prefix() {
+    .star-rating input:checked ~ label:before {
+    font-size: 36px;
+    line-height: 21px;
+    }
+  } 
+.wf1 input[type="checkbox"] {
+    margin-right: 6px;
+    transform: scale(1.8);
+    margin: 10px;
+}
+.optional {
+    color: rgb(17, 31, 231);
+}
+
+.wf1 input[type="submit"] {
+    border: none;
+    background-image: linear-gradient(#bd0606, #702525);
+    color: white;
+    border-radius: 6px;
+    padding: .8rem;
+    width: 95%;
+    max-width: 400px;
+    margin: 1rem 2% 2rem 3.3%;
+    box-shadow: 1px 1px 4px #555;
+    font-size: 1.5rem;
+}
+.wf1 input:required {
+    border-bottom: solid 8px rgb(204, 8, 8);
+}
+.wf1 input:required:valid {
+    border-bottom: solid 8px rgb(2, 104, 10);
+}
+footer {
+    background-color: #23044b;
+    padding: .5rem 2%;
+    text-align: center;
+    color: #ffffff;
+}

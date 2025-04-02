@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts/form.js" defer></script>
+    <link rel="stylesheet" href="styles/form.css">
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
     <main>
-        <h1>Course Proposal Application</h1>
+        
             <form method="get" action="review.html" class="wf1">
                 <fieldset>
                     <label for="product">Product Name:</label>
@@ -19,49 +23,52 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend> Overall Rating</legend>
-                    <label>
+                    <label> Overall Rating</label>
+                    
                     <div class="star-rating">
-                        <input type="radio" name="stars" id="star-a" value="5" required/>
+                        <input type="radio" name="stars" id="star-a" value="5" required>
                         <label for="star-a"></label>
               
-                        <input type="radio" name="stars" id="star-b" value="4" required/>
+                        <input type="radio" name="stars" id="star-b" value="4" required>
                         <label for="star-b"></label>
                 
-                        <input type="radio" name="stars" id="star-c" value="3" required/>
+                        <input type="radio" name="stars" id="star-c" value="3" required>
                         <label for="star-c"></label>
                 
-                        <input type="radio" name="stars" id="star-d" value="2" required/>
+                        <input type="radio" name="stars" id="star-d" value="2" required>
                         <label for="star-d"></label>
                 
-                        <input type="radio" name="stars" id="star-e" value="1" required/>
+                        <input type="radio" name="stars" id="star-e" value="1" required>
                         <label for="star-e"></label>
                     </div>
-                    </label>
+                    
                 </fieldset>
 
                 <fieldset>
                     <label> Date of Installation <input type="date" name="completeDate" id="completeDate" required></label>
-                    <label>Which features did you find useful in the product?
+                </fieldset>
+                <fieldset>
+                    <label>Which features did you find useful in the product?</label>
                     <div>(Check all that apply)</div>
                         <label><input type="checkbox" id ="dura1" name="durability" value="yes">Durability</label>
                         <label><input type="checkbox" id ="ease2" name="easeOfUse" value="yes">Ease of Use</label>
                         <label><input type="checkbox" id ="perfo3" name="performance" value="yes">Performance</label>
                         <label><input type="checkbox" id ="desi4" name="design" value="yes">Design</label>
-                    </label>
+                    
                 </fieldset>
 
                 <fieldset>
-                    <label for="review">Write a Review:</label>
+                    <label for="review">Write Review <span class="optional">(Optional)</span></label>
+                    
                     <textarea id="review" name="review" rows="4" cols="50" placeholder="Write your review here..."></textarea>
                 </fieldset>
 
                 <fieldset>
-                    <label for="name">Your Name:</label>
+                    <label for="name">Your Name <span class="optional">(Optional)</span></label>
                     <input type="text" id="name" name="name" placeholder="Enter your name (optional)">
                 </fieldset>
 
-                <input type="submit" value="Propose My Course">
+                <input type="submit" value="Post Review">
             </form>
        
     </main>
