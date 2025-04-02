@@ -4,9 +4,8 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 
 body {
     font-size: 16px;
-    font-family: Verdana, sans-serif;
     background-color: #ffffff;
-    
+    font-family: "Winky Sans", sans-serif;
 }
 form {
     background-color: #d2c7ec;
