@@ -6,7 +6,7 @@ document.getElementById('lastModified').textContent = `Last Modified: ${lastModi
 
 const hotels = [
     {
-      templeName: "Albuquerque Temple",
+      hotelName: "Albuquerque Temple",
       location: "Aba, Nigeria",
       dedicated: "2005, August, 7",
       area: 11500,
@@ -110,11 +110,15 @@ const hotels = [
   function createHotelCard(filteredHotels) {
     document.querySelector(".res-grid").innerHTML = "";
     filteredHotels.forEach(hotel => {
+      
       let card = document.createElement("section");
       let name = document.createElement("h3");
       let location = document.createElement("p");
+      location.classList.add("location");
       let dedicated = document.createElement("p");
+      dedicated.classList.add("dedicated");
       let area = document.createElement("p");
+      area.classList.add("area");
       let img = document.createElement("img");
   
       name.textContent = hotel.hotelName;
@@ -122,7 +126,7 @@ const hotels = [
       dedicated.innerHTML = `<span class="label">Dedicated:</span> ${hotel.dedicated}`;
       area.innerHTML = `<span class="label">Size:</span> ${hotel.area}`;
       img.setAttribute("src", hotel.imageUrl);
-      img.setAttribute("alt", "${temple.templeName} Temple");
+      img.setAttribute("alt", "${hotel.hotelName} Hotel");
       img.setAttribute("loading", "lazy");
       img.setAttribute("width", "340");
       img.setAttribute("height", "440");
@@ -153,6 +157,13 @@ function showHome() {
     content.innerHTML = `
         <h1>Welcome to Our Hotel Booking Site</h1>
         <div class="temperature-sections">
+            <div class="hero">
+                <picture>
+                    <source srcset="images/iguana-larger-view.webp" media="(min-width: 1000px)">
+                    <source srcset="images/iguana-desktop-view-medium.webp" media="(min-width: 500px)">
+                    <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
+                </picture>
+            </div>
             <div class="city-temperature" id="city1">
                 <h2>Manta</h2>
                 <p class="temperature" id="temp1">Loading...</p>
