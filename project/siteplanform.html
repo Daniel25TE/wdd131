@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a product review form.">
+    <meta name="author" content="Daniel Llumiquinga">
+    <script src="scripts/siteplan.js" defer></script>
+    
+    <link rel="icon" href="images/iguana-desktop-view-medium.webp" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:wght@500&display=swap" rel="stylesheet">
+    <title>Product Review Form</title>
+</head>
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <main>
+        <div id="reservation-form">
+            <h3>Reserve a Room at <span id="hotel-name"></span></h3>
+            <form   >
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" required>
+                <button type="submit">Submit Reservation</button>
+            
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>
+            &copy; <span id="currentyear"></span> Daniel Llumiquinga, Utah - United States.
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

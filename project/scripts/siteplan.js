@@ -106,6 +106,8 @@ const hotels = [
     createHotelCard (hotels.filter(hotel => hotel.area > 90000));
     
   });
+
+  let currentForm = null;
   
   function createHotelCard(filteredHotels) {
     document.querySelector(".res-grid").innerHTML = "";
@@ -120,6 +122,9 @@ const hotels = [
       let area = document.createElement("p");
       area.classList.add("area");
       let img = document.createElement("img");
+      let formButton = document.createElement("button") 
+      
+
   
       name.textContent = hotel.hotelName;
       location.innerHTML = `<span class="label">Location:</span> ${hotel.location}`;
@@ -130,18 +135,69 @@ const hotels = [
       img.setAttribute("loading", "lazy");
       img.setAttribute("width", "340");
       img.setAttribute("height", "440");
+      formButton.textContent = "Reserve Now";
+
+      formButton.addEventListener("click", function() {
+        reserveRoom(card, hotel.hotelName);
+      });
+      
   
       card.appendChild(name);
       card.appendChild(location);
       card.appendChild(dedicated);
       card.appendChild(area);
       card.appendChild(img);
+      card.appendChild(formButton)
   
       document.querySelector(".res-grid").appendChild(card);
     });
     
   
   }
+  function reserveRoom(card, hotelName) {
+
+    if (currentForm) {
+      currentForm.remove();
+      currentForm = null;
+    }
+
+    const existingForm = card.nextElementSibling; 
+
+    if (existingForm && existingForm.classList.contains('reservation-form')) {
+        alert("The reservation form is already open for this hotel.");
+        return; 
+    }
+    fetch('siteplanform.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(html => {
+            const div = document.createElement('div');
+            div.innerHTML = html;
+
+            
+            div.querySelector('#hotel-name').textContent = hotelName;
+
+            
+            card.insertAdjacentElement('afterend', div);
+            currentForm = div;
+
+            
+            const form = div.querySelector('form');
+            form.onsubmit = function(event) {
+                event.preventDefault();
+                const name = form.querySelector('#name').value;
+                const email = form.querySelector('#email').value;
+                window.location.href = 'siteplanform.html';
+                div.remove();
+                currentForm = null; 
+            };
+        })
+        .catch(error => console.error('Error loading the form:', error));
+}
 
   function showContact() {
     const content = document.querySelector('.res-grid');
