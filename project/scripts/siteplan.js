@@ -200,6 +200,24 @@ const hotels = [
                 div.remove();
                 currentForm = null; 
             };
+
+            const checkInInput = div.querySelector('#checkIn');
+            const checkOutInput = div.querySelector('#checkOut');
+            const breakfastCheckbox = div.querySelector('#brea1');
+            const lunchCheckbox = div.querySelector('#lun2');
+            const dinnerCheckbox = div.querySelector('#din3');
+            const parkingCheckbox = div.querySelector('#par4');
+
+           
+            checkInInput.addEventListener('change', calculateTotal);
+            checkOutInput.addEventListener('change', calculateTotal);
+
+            
+            breakfastCheckbox.addEventListener('change', calculateTotal);
+            lunchCheckbox.addEventListener('change', calculateTotal);
+            dinnerCheckbox.addEventListener('change', calculateTotal);
+            parkingCheckbox.addEventListener('change', calculateTotal);
+
             const closeButton = div.querySelector('#close-button');
             closeButton.onclick = function() {
                 div.remove(); 
@@ -249,3 +267,51 @@ function showHome() {
 
 showHome();
 
+function calculateTotal() {
+  const breakfastCost = 2.50;
+  const lunchCost = 2.50;
+  const dinnerCost = 2.50;
+  const parkingCost = 2.00;
+
+  let total = 0;
+  const checkInDate = new Date(document.getElementById('checkIn').value);
+  const checkOutDate = new Date(document.getElementById('checkOut').value);
+  
+  
+  if (checkOutDate <= checkInDate) {
+      document.getElementById('totalAmount').innerText = "Total Amount: $0.00";
+      return; 
+  }
+
+  const days = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
+
+  
+  const hotelPriceElement = document.querySelector('.price'); 
+  const hotelCapacityElement = document.querySelector('.capacity'); 
+  const hotelPriceText = hotelPriceElement ? hotelPriceElement.textContent : "$0/night";
+  const hotelCapacityText = hotelCapacityElement ? hotelCapacityElement.textContent : "1 person"; 
+
+  const hotelPrice = parseFloat(hotelPriceText.replace(/[^0-9.-]+/g, "")); 
+  const hotelCapacity = parseInt(hotelCapacityText.match(/\d+/)[0]); 
+
+  if (days > 0) {
+     
+      total += hotelPrice * days;
+
+     
+      if (document.getElementById('brea1').checked) {
+          total += breakfastCost * days * hotelCapacity;
+      }
+      if (document.getElementById('lun2').checked) {
+          total += lunchCost * days * hotelCapacity;
+      }
+      if (document.getElementById('din3').checked) {
+          total += dinnerCost * days * hotelCapacity;
+      }
+      if (document.getElementById('par4').checked) {
+          total += parkingCost * days; 
+      }
+  }
+
+  document.getElementById('totalAmount').innerText = `Total Amount: $${total.toFixed(2)}`;
+}

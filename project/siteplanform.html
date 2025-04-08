@@ -6,7 +6,8 @@
     <meta name="description" content="This is a product review form.">
     <meta name="author" content="Daniel Llumiquinga">
     <script src="scripts/siteplan.js" defer></script>
-    
+    <link rel="stylesheet" href="styles/siteplanform.css">
+
     <link rel="icon" href="images/iguana-desktop-view-medium.webp" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,77 +16,67 @@
 </head>
 <body>
     <header>
-        <h1>Product Review</h1>
+        <input type="button" value="✖" id="close-button" class="close-button">
+        <h1>Reservation Form</h1>
+        
     </header>
     <main>
         <div id="reservation-form">
-            <h3>Reserve a Room at <span id="hotel-name"></span></h3>
+            <h4>Reserve a Room at <span id="hotel-name"></span></h4>
             <form   >
                 <fieldset>
-                    <label for="product">Product Name:</label>
-                    <select id="product" name="product" required>
-                        <option value="">Select a Product ...</option>
-                        
-                    </select>
-                </fieldset>
-
-                <fieldset>
-                    <label> Overall Rating</label>
-                    
-                    <div class="star-rating">
-                        <input type="radio" name="stars" id="star-a" value="5" required>
-                        <label for="star-a"></label>
-              
-                        <input type="radio" name="stars" id="star-b" value="4" required>
-                        <label for="star-b"></label>
-                
-                        <input type="radio" name="stars" id="star-c" value="3" required>
-                        <label for="star-c"></label>
-                
-                        <input type="radio" name="stars" id="star-d" value="2" required>
-                        <label for="star-d"></label>
-                
-                        <input type="radio" name="stars" id="star-e" value="1" required>
-                        <label for="star-e"></label>
-                    </div>
-                    
-                </fieldset>
-
-                <fieldset>
-                    <label> Date of Installation <input type="date" name="completeDate" id="completeDate" required></label>
-                </fieldset>
-                <fieldset>
-                    <label>Which features did you find useful in the product?</label>
-                    <div>(Check all that apply)</div>
-                        <label><input type="checkbox" id ="dura1" name="durability" value="yes">Durability</label>
-                        <label><input type="checkbox" id ="ease2" name="easeOfUse" value="yes">Ease of Use</label>
-                        <label><input type="checkbox" id ="perfo3" name="performance" value="yes">Performance</label>
-                        <label><input type="checkbox" id ="desi4" name="design" value="yes">Design</label>
-                    
-                </fieldset>
-
-                <fieldset>
-                    <label for="review">Write Review <span class="optional">(Optional)</span></label>
-                    
-                    <textarea id="review" name="review" rows="4" cols="50" placeholder="Write your review here..."></textarea>
-                </fieldset>
-
-                <fieldset>
-                    <label for="name">Your Name <span class="optional">(Optional)</span></label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name (optional)">
-                </fieldset>
-
-                <input type="submit" value="Post Review">
-                <input type="button" value="Close" id="close-button">
+                    <legend>Guest Information</legend>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
             
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+                    <label for="phoneNumber">Your Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number" required>
+                </fieldset>
+            
+                <fieldset>
+                    <legend>Reservation Dates</legend>
+                    <label for="checkIn">Check-in Date:</label>
+                    <input type="date" name="checkIn" id="checkIn" required>
+            
+                    <label for="checkOut">Check-out Date:</label>
+                    <input type="date" name="checkOut" id="checkOut" required>
+                </fieldset>
+            
+                <fieldset>
+                    <legend>Meal Options</legend>
+                    <div>(Check all that apply)</div>
+                    <label><input type="checkbox" id="brea1" name="breakfast" value="yes" onchange="calculateTotal()"> Breakfast ($2.50/day per person)</label>
+                    <label><input type="checkbox" id="lun2" name="lunch" value="yes" onchange="calculateTotal()"> Lunch ($2.50/day per person)</label>
+                    <label><input type="checkbox" id="din3" name="dinner" value="yes" onchange="calculateTotal()"> Dinner ($2.50/day per person)</label>
+                    <label><input type="checkbox" id="par4" name="parking" value="yes" onchange="calculateTotal()"> Parking ($2.00/day)</label>
+                </fieldset>
+            
+                <fieldset id="creditCard">
+                    <legend>Payment Method</legend>
+                    <label for="cardNumber">Credit Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter your card number" required>
+            
+                    <label for="expiryDate">Expiration Date:</label>
+                    <input type="month" id="expiryDate" name="expiryDate" required>
+            
+                    <label for="cvv">Security Code (CVV):</label>
+                    <input type="text" id="cvv" name="cvv" maxlength="3" required>
+                </fieldset>
+            
+                
+            
+                <div class="total" id="totalAmount">Total Amount: $0.00</div>
+            
+                <input type="submit" value="Reserve Now">
+                
             </form>
         </div>
     </main>
     <footer>
-        <p>
-            &copy; <span id="currentyear"></span> Daniel Llumiquinga, Utah - United States.
-        </p>
-        <p id="lastModified"></p>
+        
     </footer>
 </body>
 </html>
