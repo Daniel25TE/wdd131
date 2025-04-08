@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     
     margin: .5rem;
@@ -89,30 +93,34 @@ main {
     }
 }
 
+
 section {
-    background-color: #e4d9d9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
     padding: 1rem;
+    background-color: #e4d9d9;
+    padding: 2rem;
   
     border: 0.0001em solid #b6afaf;
+    margin: 3rem;
+}
+
+.location,
+.price,
+.capacity {
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+    
     
 }
-.location,
-.area,
-.dedicated {
-    font-size: 2rem;
-    text-align: center;
-    margin: 1rem 0;
-    color: #aa1212;
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-}
+
 img {
-    width: 50%;
-    height: auto;
-   
-    margin-bottom: 1rem;
-    box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.3);
-    animation: fade 3s;
+    max-width: 100%; 
+    height: auto; 
+    
+    
     
 }
 @keyframes fade {
@@ -125,15 +133,30 @@ img {
 }
 
 
-h2, h3 {
-    
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    margin-left: -30px;
-    
+h3 {
+    margin: 1rem;
+    padding: 0;
+    text-align: left;
+    font-size: 3rem;
 }
 
-
+.my-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center;
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px;
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+.my-button:hover {
+    background-color: #f10000; 
+}
 
 footer{
     margin: 10px 0;

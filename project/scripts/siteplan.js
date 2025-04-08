@@ -6,82 +6,82 @@ document.getElementById('lastModified').textContent = `Last Modified: ${lastModi
 
 const hotels = [
     {
-      hotelName: "Albuquerque Temple",
-      location: "Aba, Nigeria",
-      dedicated: "2005, August, 7",
-      area: 11500,
+      hotelName: "El Bello",
+      location: "Manta, Ecuador",
+      capacity: "4 people",
+      price: "$50/night",
       imageUrl:
-      "images/billings_temple_lds.webp"
+      "https://picsum.photos/500/500"
     },
     {
-      templeName: "Manti Utah Temple",
-      location: "Manti, Utah, United States",
-      dedicated: "1888, May, 21",
-      area: 74792,
+      hotelName: "Los Sellos",
+      location: "Quito , Ecuador",
+      capacity: "2 people",
+      price: "$45/night",
       imageUrl:
       "images/brisbane_australia_temple_lds.webp"
     },
     {
-      templeName: "Payson Utah Temple",
-      location: "Payson, Utah, United States",
-      dedicated: "2015, June, 7",
-      area: 96630,
+      hotelName: "Los Colorados",
+      location: " Cuenca, Ecuador",
+      capacity: "3 people",
+      price: "$30/night",
       imageUrl:
       "images/bountiful_temple_lds.webp"
     },
     {
-      templeName: "Yigo Guam Temple",
-      location: "Yigo, Guam",
-      dedicated: "2020, May, 2",
-      area: 6861,
+      hotelName: "Aguardiente",
+      location: "Manta, Ecuador",
+      capacity: "1 people",
+      price: "$25/night",
       imageUrl:
       "images/billings_temple_lds.webp"
     },
     {
-      templeName: "Washington D.C. Temple",
-      location: "Kensington, Maryland, United States",
-      dedicated: "1974, November, 19",
-      area: 156558,
+      hotelName: "Los Chullas",
+      location: "Quito, Ecuador",
+      capacity: "5 people",
+      price: "$70/night",
       imageUrl:
       "images/bountiful_temple_lds.webp"
     },
     {
-      templeName: "Lima Perú Temple",
-      location: "Lima, Perú",
-      dedicated: "1986, January, 10",
-      area: 9600,
+      hotelName: "Calamares",
+      location: "Cuenca, Ecuador",
+      capacity: "4 people",
+      price: "$45/night",
       imageUrl:
       "images/brisbane_australia_temple_lds.webp"
     },
     {
-      templeName: "Mexico City Mexico Temple",
-      location: "Mexico City, Mexico",
-      dedicated: "1983, December, 2",
-      area: 116642,
+      hotelName: "Licenciados",
+      location: "Manta, Ecuador",
+      capacity: "3 people",
+      price: "$40/night",
       imageUrl:
       "images/brisbane_australia_temple_lds.webp"
     },
     {
-        templeName: "Madrid Spain Temple",
-        location: "Madrid, Spain",
-        dedicated: "1999, March, 20",
-        area: 45800,
+        hotelName: "Caracoles",
+        location: "Quito, Ecuador",
+        capacity: "6 people",
+        price: "$75/night",
         imageUrl:
         "images/brisbane_australia_temple_lds.webp"
     },
     {
-        templeName: "Natal Brazil Temple",
-        location: "Natal, Brazil",
-        dedicated: "2025, May, 17",
-        area: 19800,
+        hotelName: "Rumberos",
+        location: "Cuenca, Ecuador",
+        capacity: "4 people",
+        price: "$50/night",
         imageUrl:
         "images/bountiful_temple_lds.webp"
     },
     {
-        templeName: "Cali Colombia Temple",
-        location: "Cali, Colombia",
-        dedicated: "2025, March, 1",
-        area: 9500,
+        hotelName: "Rocolas",
+        location: "Manta, Ecuador",
+        capacity: "3 people",
+        price: "$25/night",
         imageUrl:
         "images/brisbane_australia_temple_lds.webp"
     },
@@ -93,17 +93,17 @@ const hotels = [
   
   const mantaLink = document.querySelector("#manta");
   mantaLink.addEventListener("click", () => {
-    createHotelCard (hotels.filter(hotel => hotel.dedicated < "1900"));
+    createHotelCard (hotels.filter(hotel => hotel.location == "Manta, Ecuador"));
     
   });
   const quitoLink = document.querySelector("#quito");
   quitoLink.addEventListener("click", () => {
-    createHotelCard (hotels.filter(hotel => hotel.dedicated > "2000"));
+    createHotelCard (hotels.filter(hotel => hotel.location == "Quito, Ecuador"));
     
   });
   const cuencaLink = document.querySelector("#cuenca");
   cuencaLink.addEventListener("click", () => {
-    createHotelCard (hotels.filter(hotel => hotel.area > 90000));
+    createHotelCard (hotels.filter(hotel => hotel.location == "Cuenca, Ecuador"));
     
   });
 
@@ -117,10 +117,10 @@ const hotels = [
       let name = document.createElement("h3");
       let location = document.createElement("p");
       location.classList.add("location");
-      let dedicated = document.createElement("p");
-      dedicated.classList.add("dedicated");
-      let area = document.createElement("p");
-      area.classList.add("area");
+      let capacity = document.createElement("p");
+      capacity.classList.add("capacity");
+      let price = document.createElement("p");
+      price.classList.add("price");
       let img = document.createElement("img");
       let formButton = document.createElement("button") 
       
@@ -128,25 +128,28 @@ const hotels = [
   
       name.textContent = hotel.hotelName;
       location.innerHTML = `<span class="label">Location:</span> ${hotel.location}`;
-      dedicated.innerHTML = `<span class="label">Dedicated:</span> ${hotel.dedicated}`;
-      area.innerHTML = `<span class="label">Size:</span> ${hotel.area}`;
+      capacity.innerHTML = `<span class="label">Capacity:</span> ${hotel.capacity}`;
+      price.innerHTML = `<span class="label">Price:</span> ${hotel.price}`;
       img.setAttribute("src", hotel.imageUrl);
+      
       img.setAttribute("alt", "${hotel.hotelName} Hotel");
       img.setAttribute("loading", "lazy");
-      img.setAttribute("width", "340");
-      img.setAttribute("height", "440");
+      img.setAttribute("width", "500");
+      img.setAttribute("height", "500");
       formButton.textContent = "Reserve Now";
+
+      formButton.classList.add("my-button");
 
       formButton.addEventListener("click", function() {
         reserveRoom(card, hotel.hotelName);
       });
-      
-  
       card.appendChild(name);
-      card.appendChild(location);
-      card.appendChild(dedicated);
-      card.appendChild(area);
       card.appendChild(img);
+      
+      card.appendChild(location);
+      card.appendChild(capacity);
+      card.appendChild(price);
+      
       card.appendChild(formButton)
   
       document.querySelector(".res-grid").appendChild(card);
@@ -185,21 +188,28 @@ const hotels = [
             card.insertAdjacentElement('afterend', div);
             currentForm = div;
 
+            div.scrollIntoView({ behavior: 'smooth' });
+
             
             const form = div.querySelector('form');
             form.onsubmit = function(event) {
                 event.preventDefault();
                 const name = form.querySelector('#name').value;
                 const email = form.querySelector('#email').value;
-                window.location.href = 'siteplanform.html';
+                window.location.href = 'siteplan.html'; //review form
                 div.remove();
+                currentForm = null; 
+            };
+            const closeButton = div.querySelector('#close-button');
+            closeButton.onclick = function() {
+                div.remove(); 
                 currentForm = null; 
             };
         })
         .catch(error => console.error('Error loading the form:', error));
 }
 
-  function showContact() {
+function showContact() {
     const content = document.querySelector('.res-grid');
     content.innerHTML = `
         <h1>This is our contact information!</h1>
