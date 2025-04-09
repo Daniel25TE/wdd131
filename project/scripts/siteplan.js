@@ -240,7 +240,7 @@ function showHome() {
     const content = document.querySelector('.res-grid');
     content.innerHTML = `
         <h1>Welcome to Our Hotel Booking Site</h1>
-        <div class="temperature-sections">
+        <div class="temperature-section1">
             <div class="hero">
                 <picture>
                     <source srcset="images/iguana-larger-view.webp" media="(min-width: 1000px)">
@@ -252,9 +252,31 @@ function showHome() {
                 <h2>Manta</h2>
                 <p class="temperature" id="temp1">Loading...</p>
             </div>
+            
+            
+        </div>
+        <div class="temperature-section2">
+            <div class="hero">
+                <picture>
+                    <source srcset="images/iguana-larger-view.webp" media="(min-width: 1000px)">
+                    <source srcset="images/iguana-desktop-view-medium.webp" media="(min-width: 500px)">
+                    <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
+                </picture>
+            </div>
             <div class="city-temperature" id="city2">
                 <h2>Quito</h2>
                 <p class="temperature" id="temp2">Loading...</p>
+            </div>
+            
+            
+        </div>
+        <div class="temperature-section3">
+            <div class="hero">
+                <picture>
+                    <source srcset="images/iguana-larger-view.webp" media="(min-width: 1000px)">
+                    <source srcset="images/iguana-desktop-view-medium.webp" media="(min-width: 500px)">
+                    <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
+                </picture>
             </div>
             <div class="city-temperature" id="city3">
                 <h2>Cuenca</h2>
@@ -264,6 +286,29 @@ function showHome() {
     `;
    
 }
+ // Puedes cambiar la ciudad aquí
+ const apiKey = ''; //  API key fcbdc36c5a5d4ffb08b5e9bec15b7d19
+ const cities = ['Manta', 'Quito', 'Cuenca'];
+
+ async function getTemperature(city) {
+     const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
+     try {
+         const response = await fetch(url);
+         if (!response.ok) {
+             throw new Error('Error in API response');
+         }
+         const data = await response.json();
+         const temperature = data.current.temperature;
+         document.getElementById(`temp${cities.indexOf(city) + 1}`).innerText = `Temperature: ${temperature} °C`;
+     } catch (error) {
+         console.error(`Error fetching temperature for ${city}:`, error);
+         document.getElementById(`temp${cities.indexOf(city) + 1}`).innerText = 'Error loading temperature';
+     }
+ }
+
+ cities.forEach(city => getTemperature(city));
+
+getTemperature();
 
 showHome();
 
