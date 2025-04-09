@@ -243,8 +243,8 @@ function showHome() {
         <div class="temperature-section1">
             <div class="hero">
                 <picture>
-                    <source srcset="images/iguana-larger-view.webp" media="(min-width: 1000px)">
-                    <source srcset="images/iguana-desktop-view-medium.webp" media="(min-width: 500px)">
+                    <source srcset="images/manta.webp" media="(min-width: 1000px)">
+                    <source srcset="images/manta.webp" media="(min-width: 500px)">
                     <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
                 </picture>
             </div>
@@ -252,14 +252,17 @@ function showHome() {
                 <h2>Manta</h2>
                 <p class="temperature" id="temp1">Loading...</p>
             </div>
+            <div class="invitation" id="inv1">
+                <p class="invitation" id="inv1.0"> Vamos!</p>
+            </div>
             
             
         </div>
         <div class="temperature-section2">
             <div class="hero">
                 <picture>
-                    <source srcset="images/iguana-larger-view.webp" media="(min-width: 1000px)">
-                    <source srcset="images/iguana-desktop-view-medium.webp" media="(min-width: 500px)">
+                    <source srcset="images/quito.webp" media="(min-width: 1000px)">
+                    <source srcset="images/quito.webp" media="(min-width: 500px)">
                     <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
                 </picture>
             </div>
@@ -267,48 +270,67 @@ function showHome() {
                 <h2>Quito</h2>
                 <p class="temperature" id="temp2">Loading...</p>
             </div>
+            <div class="invitation" id="inv1">
+                <p class="invitation" id="inv1.0"> Vamos!</p>
+            </div>
             
             
         </div>
         <div class="temperature-section3">
             <div class="hero">
                 <picture>
-                    <source srcset="images/iguana-larger-view.webp" media="(min-width: 1000px)">
-                    <source srcset="images/iguana-desktop-view-medium.webp" media="(min-width: 500px)">
-                    <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
+                    <source srcset="images/cuenca.webp" media="(min-width: 1000px)">
+                    <source srcset="images/cuenca.webp" media="(min-width: 500px)">
+                    <img src="images/cuenca-mobile.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
                 </picture>
             </div>
             <div class="city-temperature" id="city3">
                 <h2>Cuenca</h2>
                 <p class="temperature" id="temp3">Loading...</p>
             </div>
+            <div class="invitation" id="inv1">
+                <p class="invitation" id="inv1.0"> Vamos!</p>
+            </div>
         </div>
     `;
    
 }
- // Puedes cambiar la ciudad aquí
- const apiKey = ''; //  API key fcbdc36c5a5d4ffb08b5e9bec15b7d19
- const cities = ['Manta', 'Quito', 'Cuenca'];
+const apiKey = ''; // Your API key fcbdc36c5a5d4ffb08b5e9bec15b7d19
+const cities = ['Manta', 'Quito', 'Cuenca'];
 
- async function getTemperature(city) {
-     const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
-     try {
-         const response = await fetch(url);
-         if (!response.ok) {
-             throw new Error('Error in API response');
-         }
-         const data = await response.json();
-         const temperature = data.current.temperature;
-         document.getElementById(`temp${cities.indexOf(city) + 1}`).innerText = `Temperature: ${temperature} °C`;
-     } catch (error) {
-         console.error(`Error fetching temperature for ${city}:`, error);
-         document.getElementById(`temp${cities.indexOf(city) + 1}`).innerText = 'Error loading temperature';
-     }
- }
+async function getTemperature(city) {
+    const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Error in API response');
+        }
+        const data = await response.json();
+        const temperature = data.current.temperature;
+        const weatherIcon = data.current.weather_icons[0]; // Get the first weather icon
 
- cities.forEach(city => getTemperature(city));
+        // Update the temperature text
+        const tempElement = document.getElementById(`temp${cities.indexOf(city) + 1}`);
+        tempElement.innerText = `Temperature: ${temperature} °C`;
 
-getTemperature();
+        // Create an img element for the weather icon
+        const iconElement = document.createElement('img');
+        iconElement.src = weatherIcon; // Set the icon URL
+        iconElement.alt = 'Weather Icon'; // Alt text for accessibility
+        iconElement.style.width = '30px'; // Set the width of the icon
+        iconElement.style.height = '30px'; // Set the height of the icon
+        iconElement.style.marginLeft = '5px'; // Add some space between text and icon
+
+        // Append the icon to the temperature element
+        tempElement.appendChild(iconElement);
+    } catch (error) {
+        console.error(`Error fetching temperature for ${city}:`, error);
+        document.getElementById(`temp${cities.indexOf(city) + 1}`).innerText = 'Error loading temperature';
+    }
+}
+
+// Fetch temperatures for all cities
+cities.forEach(city => getTemperature(city));
 
 showHome();
 
