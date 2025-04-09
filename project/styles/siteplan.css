@@ -20,6 +20,7 @@ header {
 }
 h1 {
     text-align: center;
+    font-size: 3rem;
 }
 nav {
     max-width: 700px;
@@ -105,13 +106,28 @@ h2 {
     font-size: 2rem;
     color: #110808;
 }
-.invitation {
-    color: #e4d9d9;
+.invitation1 {
+    color: #000000;
     display: flex;
     justify-content: center;
     font-size: 3rem;
     
 }
+.invitation2 {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    
+}
+.invitation3 {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    
+}
+
 @media (max-width: 768px) {
     .temperature-sections {
         flex-direction: column; 
@@ -182,7 +198,71 @@ h3 {
 .my-button:hover {
     background-color: #f10000; 
 }
+.contact-info {
+    margin-bottom: 20px;
+}
+.contact-info p {
+    margin: 5px 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.contact-form {
+    margin-top: 20px;
+}
+ .contact-form textarea {
+    
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
 
+input[type="email"],
+input[type="tel"],
+input[type="month"],
+input[type="text"]{
+    background-color: #eee;
+    
+    border: solid 1px #999;
+    border-radius: 6px;
+    padding: .75rem;
+    color: #555;
+    width: 100%;
+    
+    appearance: none;
+    }
+input[type="checkbox"] {
+    
+    transform: scale(1.8);
+    margin: 10px;
+    margin-right: 10px;
+}
+.cortesy{
+    margin-bottom: 1rem;
+    border: none;
+    width: 100%;
+    
+}
+
+.contact-form button {
+    background: #35424a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.contact-form button:hover {
+    background: #45a049;
+}
+.map {
+    margin-top: 20px;
+    width: 90%;
+    height: 400px;
+    border: 0;
+}
 footer{
     margin: 10px 0;
     background-color: rgb(0, 113, 128);

@@ -56,10 +56,10 @@ input[type="submit"]:hover {
     background-color: #f10000; 
 }
 input:required {
-    border-bottom: solid 8px rgb(204, 8, 8);
+    border-bottom: solid 8px rgb(207, 68, 68);
 }
 input:required:valid {
-    border-bottom: solid 8px rgb(2, 104, 10);
+    border-bottom: solid 8px rgb(77, 192, 87);
 }
 
 #close-button {

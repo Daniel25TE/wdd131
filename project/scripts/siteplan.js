@@ -230,7 +230,54 @@ const hotels = [
 function showContact() {
     const content = document.querySelector('.res-grid');
     content.innerHTML = `
-        <h1>This is our contact information!</h1>
+        <h1>Contact us!</h1>
+        <div class="container">
+        <section class="contact-info">
+            <h2>Get in Touch</h2>
+            <p><strong>Email:</strong> ecuadorsdream@yourdream.com</p>
+            <p><strong>Phone:</strong> +1 (234) 567-890</p>
+            <p id="fix"><strong>Address:</strong> 123 Main Street, West Jordan, UT 84084</p>
+        </section>
+    
+        <section class="contact-form">
+            <h2>Would you like us to contact you? Send us a message!</h2>
+            <form action="siteplan.html" method="GET">
+                
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+                    <label for="phoneNumber">Your Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number" required>
+
+                    <label for="name">Your Message:</label>
+                    <textarea name="message" rows="5" placeholder="Enter your Message" required></textarea>
+
+                <fieldset class="cortesy">
+                    <label>How would you like us to contact you?</label>
+                    <div>(Check all that apply)</div>
+                        <label><input type="checkbox" name="email" value="yes">Email</label>
+                        <label><input type="checkbox" name="phone" value="yes">Phone Number</label>
+                        
+                    
+                </fieldset>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    
+        <section class="map">
+            <h2>Our Location</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509123!2d144.9537353153164!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f1b3%3A0x5045675218ceed30!2sMelbourne%20CBD%2C%20Victoria%2C%20Australia!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"></iframe>
+        </section>
+        </div>
         
     `;
    
@@ -252,8 +299,8 @@ function showHome() {
                 <h2>Manta</h2>
                 <p class="temperature" id="temp1">Loading...</p>
             </div>
-            <div class="invitation" id="inv1">
-                <p class="invitation" id="inv1.0"> Vamos!</p>
+            <div class="invitation1" id="inv1">
+                <p class="invitation1" id="inv1.0"> Come and enjoy of the best beaches in Manta!</p>
             </div>
             
             
@@ -270,8 +317,8 @@ function showHome() {
                 <h2>Quito</h2>
                 <p class="temperature" id="temp2">Loading...</p>
             </div>
-            <div class="invitation" id="inv1">
-                <p class="invitation" id="inv1.0"> Vamos!</p>
+            <div class="invitation2" id="inv1">
+                <p class="invitation2" id="inv1.0"> Explore the churches of the Colonial time in Quito!</p>
             </div>
             
             
@@ -281,15 +328,15 @@ function showHome() {
                 <picture>
                     <source srcset="images/cuenca.webp" media="(min-width: 1000px)">
                     <source srcset="images/cuenca.webp" media="(min-width: 500px)">
-                    <img src="images/cuenca-mobile.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
+                    <img src="images/cuenca-mobile.webp" alt="cuenca" width="500" height="749">
                 </picture>
             </div>
             <div class="city-temperature" id="city3">
                 <h2>Cuenca</h2>
                 <p class="temperature" id="temp3">Loading...</p>
             </div>
-            <div class="invitation" id="inv1">
-                <p class="invitation" id="inv1.0"> Vamos!</p>
+            <div class="invitation3" id="inv1">
+                <p class="invitation3" id="inv1.0"> Visit this beatiful indigenous group and learn their culture!</p>
             </div>
         </div>
     `;
