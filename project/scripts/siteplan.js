@@ -10,80 +10,110 @@ const hotels = [
       location: "Manta, Ecuador",
       capacity: "4 people",
       price: "$50/night",
-      imageUrl:
-      "https://picsum.photos/500/500"
+      imageUrls: [
+        "https://picsum.photos/500/500?random=1",
+        "https://picsum.photos/500/500?random=2",
+        "https://picsum.photos/500/500?random=3"
+      ]
     },
     {
       hotelName: "Los Sellos",
       location: "Quito , Ecuador",
       capacity: "2 people",
       price: "$45/night",
-      imageUrl:
-      "images/brisbane_australia_temple_lds.webp"
+      imageUrls: [
+        "https://picsum.photos/500/500?random=1",
+        "https://picsum.photos/500/500?random=2",
+        "https://picsum.photos/500/500?random=3"
+      ]
     },
     {
       hotelName: "Los Colorados",
       location: " Cuenca, Ecuador",
       capacity: "3 people",
       price: "$30/night",
-      imageUrl:
-      "images/bountiful_temple_lds.webp"
+      imageUrls: [
+        "https://picsum.photos/500/500?random=1",
+        "https://picsum.photos/500/500?random=2",
+        "https://picsum.photos/500/500?random=3"
+      ]
     },
     {
       hotelName: "Aguardiente",
       location: "Manta, Ecuador",
       capacity: "1 people",
       price: "$25/night",
-      imageUrl:
-      "images/billings_temple_lds.webp"
+      imageUrls: [
+        "https://picsum.photos/500/500?random=1",
+        "https://picsum.photos/500/500?random=2",
+        "https://picsum.photos/500/500?random=3"
+      ]
     },
     {
       hotelName: "Los Chullas",
       location: "Quito, Ecuador",
       capacity: "5 people",
       price: "$70/night",
-      imageUrl:
-      "images/bountiful_temple_lds.webp"
+      imageUrls: [
+        "https://picsum.photos/500/500?random=1",
+        "https://picsum.photos/500/500?random=2",
+        "https://picsum.photos/500/500?random=3"
+      ]
     },
     {
       hotelName: "Calamares",
       location: "Cuenca, Ecuador",
       capacity: "4 people",
       price: "$45/night",
-      imageUrl:
-      "images/brisbane_australia_temple_lds.webp"
+      imageUrls: [
+        "https://picsum.photos/500/500?random=1",
+        "https://picsum.photos/500/500?random=2",
+        "https://picsum.photos/500/500?random=3"
+      ]
     },
     {
       hotelName: "Licenciados",
       location: "Manta, Ecuador",
       capacity: "3 people",
       price: "$40/night",
-      imageUrl:
-      "images/brisbane_australia_temple_lds.webp"
+      imageUrls: [
+        "https://picsum.photos/500/500?random=1",
+        "https://picsum.photos/500/500?random=2",
+        "https://picsum.photos/500/500?random=3"
+      ]
     },
     {
         hotelName: "Caracoles",
         location: "Quito, Ecuador",
         capacity: "6 people",
         price: "$75/night",
-        imageUrl:
-        "images/brisbane_australia_temple_lds.webp"
+        imageUrls: [
+            "https://picsum.photos/500/500?random=1",
+            "https://picsum.photos/500/500?random=2",
+            "https://picsum.photos/500/500?random=3"
+          ]
     },
     {
         hotelName: "Rumberos",
         location: "Cuenca, Ecuador",
         capacity: "4 people",
         price: "$50/night",
-        imageUrl:
-        "images/bountiful_temple_lds.webp"
+        imageUrls: [
+            "https://picsum.photos/500/500?random=1",
+            "https://picsum.photos/500/500?random=2",
+            "https://picsum.photos/500/500?random=3"
+          ]
     },
     {
         hotelName: "Rocolas",
         location: "Manta, Ecuador",
         capacity: "3 people",
         price: "$25/night",
-        imageUrl:
-        "images/brisbane_australia_temple_lds.webp"
+        imageUrls: [
+            "https://picsum.photos/500/500?random=1",
+            "https://picsum.photos/500/500?random=2",
+            "https://picsum.photos/500/500?random=3"
+          ]
     },
   ];
   
@@ -121,31 +151,97 @@ const hotels = [
       capacity.classList.add("capacity");
       let price = document.createElement("p");
       price.classList.add("price");
-      let img = document.createElement("img");
-      let formButton = document.createElement("button") 
-      
 
+      let albumContainer = document.createElement("div");
+      albumContainer.classList.add("album-container");
+      let prevImage = document.createElement("img");
+      prevImage.classList.add("album-prev");
+      let mainImage = document.createElement("img");
+      mainImage.classList.add("album-main");
+      let nextImage = document.createElement("img");
+      nextImage.classList.add("album-next");
+
+      let leftButton = document.createElement("button");
+      leftButton.textContent = "←";
+      leftButton.classList.add("album-left-btn");
+  
+      let rightButton = document.createElement("button");
+      rightButton.textContent = "→";
+      rightButton.classList.add("album-right-btn");
+
+      let formButton = document.createElement("button");
+
+      
+      
   
       name.textContent = hotel.hotelName;
       location.innerHTML = `<span class="label">Location:</span> ${hotel.location}`;
       capacity.innerHTML = `<span class="label">Capacity:</span> ${hotel.capacity}`;
       price.innerHTML = `<span class="label">Price:</span> ${hotel.price}`;
-      img.setAttribute("src", hotel.imageUrl);
-      
-      img.setAttribute("alt", "${hotel.hotelName} Hotel");
-      img.setAttribute("loading", "lazy");
-      img.setAttribute("width", "500");
-      img.setAttribute("height", "500");
+
+      //img.setAttribute("alt", "${hotel.hotelName} Hotel");
+      //img.setAttribute("loading", "lazy");
+      //img.setAttribute("width", "500");
+      //img.setAttribute("height", "500");
       formButton.textContent = "Reserve Now";
+      let currentImageIndex = 0;
+
+
+      function updateAlbum() {
+      let len = hotel.imageUrls.length;
+      let prevIndex = (currentImageIndex - 1 + len) % len;
+      let nextIndex = (currentImageIndex + 1) % len;
+      prevImage.setAttribute("src", hotel.imageUrls[prevIndex]);
+      mainImage.setAttribute("src", hotel.imageUrls[currentImageIndex]);
+      nextImage.setAttribute("src", hotel.imageUrls[nextIndex]);
+
+      // (Optional) update alt texts
+      prevImage.setAttribute("alt", `${hotel.hotelName} - previous image`);
+      mainImage.setAttribute("alt", `${hotel.hotelName} - main image`);
+      nextImage.setAttribute("alt", `${hotel.hotelName} - next image`);
+      
+    }
+    updateAlbum();
+      
+      
+      
+      
+
+    leftButton.addEventListener("click", () => {
+        mainImage.classList.add("pressed-left");
+        setTimeout(() => {
+          currentImageIndex =
+            (currentImageIndex - 1 + hotel.imageUrls.length) % hotel.imageUrls.length;
+          updateAlbum();
+          mainImage.classList.remove("pressed-left");
+        }, 400); 
+      });
+      
+   
+    rightButton.addEventListener("click", () => {
+      mainImage.classList.add("pressed-right");
+      setTimeout(() => {
+        currentImageIndex = (currentImageIndex + 1) % hotel.imageUrls.length;
+        updateAlbum();
+        mainImage.classList.remove("pressed-right");
+      }, 400);
+    });
 
       formButton.classList.add("my-button");
 
       formButton.addEventListener("click", function() {
         reserveRoom(card, hotel.hotelName);
       });
+
+
+      albumContainer.appendChild(prevImage);
+      albumContainer.appendChild(mainImage);
+      albumContainer.appendChild(nextImage);
+      albumContainer.appendChild(leftButton);
+      albumContainer.appendChild(rightButton);
+
       card.appendChild(name);
-      card.appendChild(img);
-      
+      card.appendChild(albumContainer);
       card.appendChild(location);
       card.appendChild(capacity);
       card.appendChild(price);
@@ -259,6 +355,7 @@ function showContact() {
                     <label>How would you like us to contact you?</label>
                     <div>(Check all that apply)</div>
                         <label><input type="checkbox" name="email" value="yes">Email</label>
+                        <hr>
                         <label><input type="checkbox" name="phone" value="yes">Phone Number</label>
                         
                     

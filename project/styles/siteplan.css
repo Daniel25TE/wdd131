@@ -156,13 +156,89 @@ section {
     
     
 }
+.album-container {
+    width: 500px;   
+    height: 500px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
 
+
+.album-container img {
+    position: absolute;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 80%;
+    height: 80%;
+}
+.album-main {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+}
+.album-prev {
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    z-index: 1;
+    opacity: 0.6;
+}
+.album-next {
+    right: 20%;
+    top: 50%;
+    transform: translate(50%, -50%) scale(0.8);
+    z-index: 1;
+    opacity: 0.6;
+}
+.album-left-btn,
+.album-right-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 3;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.album-left-btn:hover,
+.album-right-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.album-left-btn {
+  left: 5px;
+}
+.album-right-btn {
+  right: 5px;
+}
+@keyframes pressLeft {
+    from { transform: translate(-50%, -50%); }
+    to { transform: translate(-250%, -50%); }
+  }
+  
+  @keyframes pressRight {
+    from { transform: translate(-50%, -50%); }
+    to { transform: translate(150%, -50%); }
+  }
+  
+  
+  .pressed-left {
+    animation: pressLeft 0.4s ease;
+  }
+  
+  .pressed-right {
+    animation: pressRight 0.4s ease;
+  }
 img {
     max-width: 100%; 
     height: auto; 
-    
-    
-    
 }
 @keyframes fade {
     0% {
@@ -209,28 +285,19 @@ h3 {
 .contact-form {
     margin-top: 20px;
 }
- .contact-form textarea {
     
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    
-}
-
+.contact-form textarea,
 input[type="email"],
 input[type="tel"],
 input[type="month"],
 input[type="text"]{
     background-color: #eee;
-    
     border: solid 1px #999;
     border-radius: 6px;
     padding: .75rem;
     color: #555;
-    width: 100%;
-    
+    width: 95%;
+    margin: .5rem;
     appearance: none;
     }
 input[type="checkbox"] {
@@ -257,9 +324,12 @@ input[type="checkbox"] {
 .contact-form button:hover {
     background: #45a049;
 }
+hr {
+    border: none;
+}
 .map {
     margin-top: 20px;
-    width: 90%;
+    width: auto;
     height: 400px;
     border: 0;
 }
