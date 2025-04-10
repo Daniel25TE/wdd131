@@ -3,14 +3,12 @@ html {
 }
 
 body {
-    
-    margin: .5rem;
+    margin: 0.5rem;
     background-color: white;
-    
     font-weight: 500;
-}   
+}
 
-header {
+header, footer {
     background-color: rgb(0, 113, 128);
     color: white;
     text-align: center;
@@ -18,28 +16,30 @@ header {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
 }
-h1 {
+
+h1, h2, h3 {
     text-align: center;
     font-size: 3rem;
+    margin: 1rem 0;
 }
+
 nav {
     max-width: 700px;
     margin: 1rem auto;
     color: #ffffff;
+}
 
-}
-.navigation a {
-    color:#ffffff
-}
 .navigation {
     display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	list-style: none;
-	background-color: #333;
-	
-    
+    justify-content: space-evenly;
+    list-style: none;
+    background-color: #333;
     padding: 2rem 0;
+}
+
+.navigation a {
+    color: #ffffff;
+   
 }
 #menu {
     display: none;
@@ -49,35 +49,18 @@ main {
     height: 100%;
     font-family: "Winky Sans", sans-serif;
     font-weight: 500;
-    margin: .5rem ;
+    margin: 0.5rem;
 }
 
+.temperature-section {
+    position: relative;
+    padding: 1rem;
+    height: 100vh;
+    background-size: cover;
+    margin: 1rem;
+}
 
-.temperature-section1 {
-    position: relative;
-    padding: 1rem;
-    height: 100vh; 
-    
-    background-size: cover;
-    margin: 1rem;
-}
-.temperature-section2 {
-    position: relative;
-    padding: 1rem;
-    height: 100vh; 
-    
-    background-size: cover;
-    margin: 1rem;
-}
-.temperature-section3 {
-    position: relative;
-    padding: 1rem;
-    height: 100vh; 
-    
-    background-size: cover;
-    margin: 1rem;
-}
-.hero img{
+.hero img {
     position: absolute;
     top: 0;
     left: 0;
@@ -86,22 +69,19 @@ main {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    z-index: -1; 
+    z-index: -1;
 }
 
 .city-temperature {
-    background: rgba(255, 255, 255, 0.8); 
-    margin: 10px; 
-    padding: 20px; 
-    border-radius: 8px; 
+    background: rgba(255, 255, 255, 0.8);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
     display: grid;
     grid-template-columns: 11fr 15fr;
 }
 
-h2 {
-    font-size: 3rem;
-}
 .temperature {
     font-size: 2rem;
     color: #110808;
@@ -138,32 +118,26 @@ h2 {
 section {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    padding: 1rem;
-    background-color: #e4d9d9;
     padding: 2rem;
-  
+    background-color: #e4d9d9;
     border: 0.0001em solid #b6afaf;
     margin: 3rem;
 }
 
-.location,
-.price,
-.capacity {
-    margin-bottom: .5rem;
+.location, .price, .capacity {
+    margin-bottom: 0.5rem;
     font-size: 1.5rem;
-    
-    
 }
+
 .album-container {
-    width: 500px;   
+    width: 500px;
     height: 500px;
     margin: 20px auto;
     position: relative;
     overflow: hidden;
 }
-
 
 .album-container img {
     position: absolute;
@@ -173,6 +147,7 @@ section {
     width: 80%;
     height: 80%;
 }
+
 .album-main {
     left: 50%;
     top: 50%;
@@ -194,23 +169,22 @@ section {
     z-index: 1;
     opacity: 0.6;
 }
-.album-left-btn,
-.album-right-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  z-index: 3;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+.album-left-btn, .album-right-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
-.album-left-btn:hover,
-.album-right-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+
+.album-left-btn:hover, .album-right-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .album-left-btn {
   left: 5px;
@@ -221,21 +195,20 @@ section {
 @keyframes pressLeft {
     from { transform: translate(-50%, -50%); }
     to { transform: translate(-250%, -50%); }
-  }
-  
-  @keyframes pressRight {
+}
+
+@keyframes pressRight {
     from { transform: translate(-50%, -50%); }
     to { transform: translate(150%, -50%); }
-  }
+}
   
-  
-  .pressed-left {
+.pressed-left {
     animation: pressLeft 0.4s ease;
-  }
-  
-  .pressed-right {
+}
+
+.pressed-right {
     animation: pressRight 0.4s ease;
-  }
+}
 img {
     max-width: 100%; 
     height: auto; 
@@ -247,14 +220,6 @@ img {
     100% {
         opacity: 1;
     }
-}
-
-
-h3 {
-    margin: 1rem;
-    padding: 0;
-    text-align: left;
-    font-size: 3rem;
 }
 
 .my-button {
@@ -300,11 +265,12 @@ input[type="text"]{
     margin: .5rem;
     appearance: none;
     }
+
 input[type="checkbox"] {
     
     transform: scale(1.8);
     margin: 10px;
-    margin-right: 10px;
+    
 }
 .cortesy{
     margin-bottom: 1rem;
@@ -332,13 +298,4 @@ hr {
     width: auto;
     height: 400px;
     border: 0;
-}
-footer{
-    margin: 10px 0;
-    background-color: rgb(0, 113, 128);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
 }

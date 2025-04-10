@@ -4,6 +4,23 @@ document.getElementById('currentyear').textContent = currentYear;
 const lastModified = document.lastModified;
 document.getElementById('lastModified').textContent = `Last Modified: ${lastModified}`;
 
+document.addEventListener("DOMContentLoaded", function() {
+  const menuButton = document.getElementById("menu");
+  const navigation = document.querySelector(".navigation");
+  const navLinks = navigation.querySelectorAll("a");
+
+  menuButton.addEventListener("click", function() {
+      navigation.classList.toggle("open");
+      menuButton.classList.toggle("open");
+  });
+  navLinks.forEach(link => {
+    link.addEventListener("click", function() {
+        navigation.classList.remove("open"); 
+        menuButton.classList.remove("open"); 
+    });
+});
+});
+
 const hotels = [
     {
       hotelName: "El Bello",
@@ -384,7 +401,7 @@ function showHome() {
     const content = document.querySelector('.res-grid');
     content.innerHTML = `
         <h1>Welcome to Our Hotel Booking Site</h1>
-        <div class="temperature-section1">
+        <div class="temperature-section">
             <div class="hero">
                 <picture>
                     <source srcset="images/manta.webp" media="(min-width: 1000px)">
@@ -402,7 +419,7 @@ function showHome() {
             
             
         </div>
-        <div class="temperature-section2">
+        <div class="temperature-section">
             <div class="hero">
                 <picture>
                     <source srcset="images/quito.webp" media="(min-width: 1000px)">
@@ -420,7 +437,7 @@ function showHome() {
             
             
         </div>
-        <div class="temperature-section3">
+        <div class="temperature-section">
             <div class="hero">
                 <picture>
                     <source srcset="images/cuenca.webp" media="(min-width: 1000px)">

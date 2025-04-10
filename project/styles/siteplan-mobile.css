@@ -1,0 +1,217 @@
+@media (max-width: 500px) {
+    body {
+        margin: 0.5rem;
+        font-size: 14px; 
+    }
+
+    header, footer {
+        padding: 0.5rem; 
+        height: auto;
+        width: auto;
+    }
+
+    h1, h2, h3 {
+        font-size: 2.5rem;
+    }
+
+    nav {
+        max-width: 700px; 
+        margin: 1rem auto;
+    }
+
+    #menu {
+        display: block; 
+        font-size: 1.5rem; 
+        border: none; 
+        background: none; 
+        color: #fff; 
+        position: absolute; 
+        top: 1rem; 
+        right: 1rem; 
+        cursor: pointer; 
+        z-index: 1000; 
+    }
+
+    #menu::before {
+        content: "☰"; 
+    }
+
+    #menu.open::before {
+        content: "❎"; 
+    }
+
+    .navigation {
+        display: none; 
+        flex-direction: column; 
+        list-style: none; 
+        background-color: #333; 
+        position: absolute; 
+        top: 50px; 
+        right: 0; 
+        width: 100%; 
+        transition: max-height 0.3s ease, opacity 0.3s ease; 
+        max-height: 0; 
+        opacity: 0; 
+        overflow: hidden; 
+        border-radius: 30px 30px;
+    }
+    .navigation li {
+        margin: .8rem;
+    }
+    .navigation.open {
+        display: flex;
+        max-height: 500px; 
+        opacity: 1; 
+    }
+
+    .navigation a {
+        padding: 1rem; 
+        text-align: center; 
+        text-decoration: none; 
+        color: #fff; 
+        transition: background-color 0.3s ease; 
+    }
+
+    .navigation a:hover {
+        background-color: #bbb; 
+        color: #333; 
+        font-weight: 500; 
+    }
+
+
+    .temperature-section {
+        height: auto; 
+        margin: 0.5rem; 
+    }
+
+    .city-temperature {
+        grid-template-columns: 1fr; 
+    }
+
+    .album-container {
+        width: 100%; 
+        max-width: 500px; 
+        height: auto; 
+        margin: 20px auto; 
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .album-container img {
+        position: absolute;
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%; 
+    }
+    
+    .album-main {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    }
+    
+    .album-prev {
+        left: 20%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        z-index: 1;
+        opacity: 0.6;
+    }
+    
+    .album-next {
+        right: 20%;
+        top: 50%;
+        transform: translate(50%, -50%) scale(0.8);
+        z-index: 1;
+        opacity: 0.6;
+    }
+    
+    .album-left-btn, .album-right-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        z-index: 3;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+    }
+    
+    .album-left-btn:hover, .album-right-btn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .album-left-btn {
+        left: 5px;
+    }
+    
+    .album-right-btn {
+        right: 5px;
+    }
+    
+    @keyframes pressLeft {
+        from { transform: translate(-50%, -50%); }
+        to { transform: translate(-250%, -50%); }
+    }
+    
+    @keyframes pressRight {
+        from { transform: translate(-50%, -50%); }
+        to { transform: translate(150%, -50%); }
+    }
+    
+    .pressed-left {
+        animation: pressLeft 0.4s ease;
+    }
+    
+    .pressed-right {
+        animation: pressRight 0.4s ease;
+    }
+    
+    img {
+        max-width: 100%; 
+        height: auto; 
+    }
+    
+    @keyframes fade {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+   
+    
+        .album-container {
+            height: 300px; 
+        }
+    
+        .album-prev, .album-next {
+            transform: translate(-50%, -50%) scale(0.7);
+        }
+    
+        .album-left-btn, .album-right-btn {
+            padding: 8px 12px; 
+        }
+    
+
+    .contact-form textarea,
+    input[type="email"],
+    input[type="tel"],
+    input[type="month"],
+    input[type="text"] {
+        width: 100%; 
+    }
+
+    .my-button {
+        width: 100%; 
+    }
+}
