@@ -1,4 +1,4 @@
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     body {
         margin: 0.5rem;
         font-size: 14px; 
@@ -14,10 +14,7 @@
         font-size: 2.5rem;
     }
 
-    nav {
-        max-width: 700px; 
-        margin: 1rem auto;
-    }
+    
 
     #menu {
         display: block; 
@@ -31,52 +28,70 @@
         cursor: pointer; 
         z-index: 1000; 
     }
-
-    #menu::before {
-        content: "☰"; 
+    
+    nav {
+        max-width: 700px; 
+        margin: 1rem auto;
+        
     }
-
-    #menu.open::before {
-        content: "❎"; 
-    }
-
+    
     .navigation {
         display: none; 
         flex-direction: column; 
         list-style: none; 
-        background-color: #333; 
-        position: absolute; 
-        top: 50px; 
-        right: 0; 
-        width: 100%; 
-        transition: max-height 0.3s ease, opacity 0.3s ease; 
-        max-height: 0; 
+        background-color: rgba(51, 51, 51, 0.95);
+        position: fixed;
+        top: 0; 
+        right: 0;
+        width: 100%;
+        height: 100%; 
+        transition: opacity 0.3s ease; 
         opacity: 0; 
         overflow: hidden; 
-        border-radius: 30px 30px;
+        border-radius: 0; 
+        z-index: 999;
+        margin-top: auto;
     }
+    
     .navigation li {
-        margin: .8rem;
+        margin: 1rem 0; 
     }
-    .navigation.open {
-        display: flex;
-        max-height: 500px; 
-        opacity: 1; 
-    }
-
+    
     .navigation a {
         padding: 1rem; 
         text-align: center; 
         text-decoration: none; 
-        color: #fff; 
+        color: #ffffff; 
         transition: background-color 0.3s ease; 
+        font-size: 2rem;
     }
-
+    
     .navigation a:hover {
         background-color: #bbb; 
         color: #333; 
         font-weight: 500; 
     }
+    
+    #menu::before {
+        content: "☰"; 
+    }
+    
+    #menu.open::before {
+        content: "❎"; 
+    }
+    
+    .navigation.open {
+        display: flex;
+        opacity: 1; 
+    }
+
+
+    .temperature-sections {
+        flex-direction: column; 
+    }
+
+
+    
 
 
     .temperature-section {
@@ -208,10 +223,24 @@
     input[type="tel"],
     input[type="month"],
     input[type="text"] {
-        width: 100%; 
+        max-width: 90%; 
     }
 
     .my-button {
         width: 100%; 
+    }
+    .contact-info {
+        display: block;
+        text-align: center;
+        padding: 0px;
+        margin: 0rem;
+    }
+    .contact-form {
+        margin: 0rem;
+        margin-top: 1rem;
+    }
+    .map {
+        margin: 0rem;
+        margin-top: 1rem;
     }
 }

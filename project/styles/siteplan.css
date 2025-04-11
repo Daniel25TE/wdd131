@@ -1,11 +1,25 @@
 html {
     scroll-behavior: smooth;
 }
-
+.teveo {
+    display: block;
+    text-align: center;
+}
+.confirmation {
+    background-color: rgb(0, 113, 128); /* Footer background color */
+    color: white; /* Footer text color */
+    text-align: center; /* Center text in the footer */
+    padding: 10px 0; /* Padding for the footer */
+    position: absolute; /* Position the footer absolutely */
+    bottom: 1rem; /* Align it to the bottom */
+    left: 1rem; /* Align it to the left */
+    right: 1rem;
+}
 body {
     margin: 0.5rem;
     background-color: white;
     font-weight: 500;
+    font-family: "Roboto", sans-serif;
 }
 
 header, footer {
@@ -108,11 +122,7 @@ main {
     
 }
 
-@media (max-width: 768px) {
-    .temperature-sections {
-        flex-direction: column; 
-    }
-}
+
 
 
 section {
@@ -212,6 +222,8 @@ section {
 img {
     max-width: 100%; 
     height: auto; 
+    box-shadow: 2px 2px 15px 10px rgba(0, 0, 0, 0.3);
+    animation: fade 1s;
 }
 @keyframes fade {
     0% {
@@ -240,10 +252,11 @@ img {
     background-color: #f10000; 
 }
 .contact-info {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+
 }
 .contact-info p {
-    margin: 5px 0;
+    margin: 1px 0;
     padding: 1rem;
     font-size: 1.5rem;
 }

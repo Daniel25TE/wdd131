@@ -196,10 +196,7 @@ const hotels = [
       capacity.innerHTML = `<span class="label">Capacity:</span> ${hotel.capacity}`;
       price.innerHTML = `<span class="label">Price:</span> ${hotel.price}`;
 
-      //img.setAttribute("alt", "${hotel.hotelName} Hotel");
-      //img.setAttribute("loading", "lazy");
-      //img.setAttribute("width", "500");
-      //img.setAttribute("height", "500");
+      
       formButton.textContent = "Reserve Now";
       let currentImageIndex = 0;
 
@@ -214,9 +211,11 @@ const hotels = [
 
       // (Optional) update alt texts
       prevImage.setAttribute("alt", `${hotel.hotelName} - previous image`);
+      prevImage.setAttribute("loading", "lazy");
       mainImage.setAttribute("alt", `${hotel.hotelName} - main image`);
+      mainImage.setAttribute("loading", "lazy");
       nextImage.setAttribute("alt", `${hotel.hotelName} - next image`);
-      
+      nextImage.setAttribute("loading", "lazy");
     }
     updateAlbum();
       
@@ -309,10 +308,13 @@ const hotels = [
                 event.preventDefault();
                 const name = form.querySelector('#name').value;
                 const email = form.querySelector('#email').value;
-                window.location.href = 'siteplan.html'; //review form
+            
+                
+                window.open('confirmation.html', '_blank'); 
+            
                 div.remove();
                 currentForm = null; 
-            };
+};
 
             const checkInInput = div.querySelector('#checkIn');
             const checkOutInput = div.querySelector('#checkOut');
@@ -347,9 +349,13 @@ function showContact() {
         <div class="container">
         <section class="contact-info">
             <h2>Get in Touch</h2>
-            <p><strong>Email:</strong> ecuadorsdream@yourdream.com</p>
-            <p><strong>Phone:</strong> +1 (234) 567-890</p>
-            <p id="fix"><strong>Address:</strong> 123 Main Street, West Jordan, UT 84084</p>
+            <p><strong>Email:</strong> </p>
+            <p>ecuadorsdream@yourdream.com</p>
+            
+            <p><strong>Phone:</strong> </p>
+            <p>+1 (234) 567-890</p>
+            <p id="fix"><strong>Address:</strong> </p>
+            <p>123 Main Street, West Jordan, UT 84084</p>
         </section>
     
         <section class="contact-form">
@@ -468,21 +474,21 @@ async function getTemperature(city) {
         }
         const data = await response.json();
         const temperature = data.current.temperature;
-        const weatherIcon = data.current.weather_icons[0]; // Get the first weather icon
+        const weatherIcon = data.current.weather_icons[0]; 
 
-        // Update the temperature text
+        
         const tempElement = document.getElementById(`temp${cities.indexOf(city) + 1}`);
         tempElement.innerText = `Temperature: ${temperature} °C`;
 
-        // Create an img element for the weather icon
+        
         const iconElement = document.createElement('img');
-        iconElement.src = weatherIcon; // Set the icon URL
-        iconElement.alt = 'Weather Icon'; // Alt text for accessibility
-        iconElement.style.width = '30px'; // Set the width of the icon
-        iconElement.style.height = '30px'; // Set the height of the icon
-        iconElement.style.marginLeft = '5px'; // Add some space between text and icon
+        iconElement.src = weatherIcon; 
+        iconElement.alt = 'Weather Icon'; 
+        iconElement.style.width = '30px';
+        iconElement.style.height = '30px'; 
+        iconElement.style.marginLeft = '5px'; 
 
-        // Append the icon to the temperature element
+     
         tempElement.appendChild(iconElement);
     } catch (error) {
         console.error(`Error fetching temperature for ${city}:`, error);
@@ -490,7 +496,7 @@ async function getTemperature(city) {
     }
 }
 
-// Fetch temperatures for all cities
+
 cities.forEach(city => getTemperature(city));
 
 showHome();
