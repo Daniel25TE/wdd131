@@ -466,7 +466,7 @@ const apiKey = ''; // Your API key fcbdc36c5a5d4ffb08b5e9bec15b7d19
 const cities = ['Manta', 'Quito', 'Cuenca'];
 
 async function getTemperature(city) {
-    const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
+    const url = `https://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
     try {
         const response = await fetch(url);
         if (!response.ok) {
