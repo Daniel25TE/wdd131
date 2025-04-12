@@ -410,9 +410,9 @@ function showHome() {
         <div class="temperature-section">
             <div class="hero">
                 <picture>
-                    <source srcset="images/manta.webp" media="(min-width: 1000px)">
-                    <source srcset="images/manta.webp" media="(min-width: 500px)">
-                    <img src="images/manta-mobile.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
+                    <source srcset="images/cuenca.webp" media="(min-width: 1000px)">
+                    <source srcset="images/cuenca.webp" media="(min-width: 500px)">
+                    <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
                 </picture>
             </div>
             <div class="city-temperature" id="city1">
@@ -430,7 +430,7 @@ function showHome() {
                 <picture>
                     <source srcset="images/quito.webp" media="(min-width: 1000px)">
                     <source srcset="images/quito.webp" media="(min-width: 500px)">
-                    <img src="images/quito-mobile.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
+                    <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
                 </picture>
             </div>
             <div class="city-temperature" id="city2">
