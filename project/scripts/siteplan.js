@@ -39,9 +39,9 @@ const hotels = [
       capacity: "2 people",
       price: "$45/night",
       imageUrls: [
-        "https://picsum.photos/500/500?random=1",
-        "https://picsum.photos/500/500?random=2",
-        "https://picsum.photos/500/500?random=3"
+        "images/hotel1.webp",
+        "images/hotel2.webp",
+        "images/hotel3.webp"
       ]
     },
     {
@@ -50,9 +50,9 @@ const hotels = [
       capacity: "3 people",
       price: "$30/night",
       imageUrls: [
-        "https://picsum.photos/500/500?random=1",
-        "https://picsum.photos/500/500?random=2",
-        "https://picsum.photos/500/500?random=3"
+        "images/hotel1.webp",
+        "images/hotel2.webp",
+        "images/hotel3.webp"
       ]
     },
     {
@@ -61,9 +61,9 @@ const hotels = [
       capacity: "1 people",
       price: "$25/night",
       imageUrls: [
-        "https://picsum.photos/500/500?random=1",
-        "https://picsum.photos/500/500?random=2",
-        "https://picsum.photos/500/500?random=3"
+        "images/hotel1.webp",
+        "images/hotel2.webp",
+        "images/hotel3.webp"
       ]
     },
     {
@@ -72,9 +72,9 @@ const hotels = [
       capacity: "5 people",
       price: "$70/night",
       imageUrls: [
-        "https://picsum.photos/500/500?random=1",
-        "https://picsum.photos/500/500?random=2",
-        "https://picsum.photos/500/500?random=3"
+        "images/hotel1.webp",
+        "images/hotel2.webp",
+        "images/hotel3.webp"
       ]
     },
     {
@@ -83,9 +83,9 @@ const hotels = [
       capacity: "4 people",
       price: "$45/night",
       imageUrls: [
-        "https://picsum.photos/500/500?random=1",
-        "https://picsum.photos/500/500?random=2",
-        "https://picsum.photos/500/500?random=3"
+        "images/hotel1.webp",
+        "images/hotel2.webp",
+        "images/hotel3.webp"
       ]
     },
     {
@@ -94,9 +94,9 @@ const hotels = [
       capacity: "3 people",
       price: "$40/night",
       imageUrls: [
-        "https://picsum.photos/500/500?random=1",
-        "https://picsum.photos/500/500?random=2",
-        "https://picsum.photos/500/500?random=3"
+        "images/hotel1.webp",
+        "images/hotel2.webp",
+        "images/hotel3.webp"
       ]
     },
     {
@@ -105,9 +105,9 @@ const hotels = [
         capacity: "6 people",
         price: "$75/night",
         imageUrls: [
-            "https://picsum.photos/500/500?random=1",
-            "https://picsum.photos/500/500?random=2",
-            "https://picsum.photos/500/500?random=3"
+          "images/hotel1.webp",
+          "images/hotel2.webp",
+          "images/hotel3.webp"
           ]
     },
     {
@@ -116,9 +116,9 @@ const hotels = [
         capacity: "4 people",
         price: "$50/night",
         imageUrls: [
-            "https://picsum.photos/500/500?random=1",
-            "https://picsum.photos/500/500?random=2",
-            "https://picsum.photos/500/500?random=3"
+            "images/hotel1.webp",
+            "images/hotel2.webp",
+            "images/hotel3.webp"
           ]
     },
     {
@@ -127,9 +127,9 @@ const hotels = [
         capacity: "3 people",
         price: "$25/night",
         imageUrls: [
-            "https://picsum.photos/500/500?random=1",
-            "https://picsum.photos/500/500?random=2",
-            "https://picsum.photos/500/500?random=3"
+            "images/hotel1.webp",
+            "images/hotel2.webp",
+            "images/hotel3.webp"
           ]
     },
   ];
@@ -412,7 +412,7 @@ function showHome() {
                 <picture>
                     <source srcset="images/manta.webp" media="(min-width: 1000px)">
                     <source srcset="images/manta.webp" media="(min-width: 500px)">
-                    <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
+                    <img src="images/manta-mobile.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
                 </picture>
             </div>
             <div class="city-temperature" id="city1">
@@ -430,7 +430,7 @@ function showHome() {
                 <picture>
                     <source srcset="images/quito.webp" media="(min-width: 1000px)">
                     <source srcset="images/quito.webp" media="(min-width: 500px)">
-                    <img src="images/iguana-mobile-view.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
+                    <img src="images/quito-mobile.webp" alt="Beautiful landscape of Madagascar" width="500" height="749">
                 </picture>
             </div>
             <div class="city-temperature" id="city2">
