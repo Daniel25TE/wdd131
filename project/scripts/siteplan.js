@@ -28,9 +28,9 @@ const hotels = [
       capacity: "4 people",
       price: "$50/night",
       imageUrls: [
-        "https://picsum.photos/500/500?random=1",
-        "https://picsum.photos/500/500?random=2",
-        "https://picsum.photos/500/500?random=3"
+        "images/hotel1.webp",
+        "images/hotel2.webp",
+        "images/hotel3.webp"
       ]
     },
     {

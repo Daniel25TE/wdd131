@@ -133,8 +133,7 @@ section {
     padding: 2rem;
     background-color: #e4d9d9;
     border: 0.0001em solid #b6afaf;
-    margin: 0rem;
-    margin-top: 1rem;
+    margin: 3rem;
 }
 
 .location, .price, .capacity {
