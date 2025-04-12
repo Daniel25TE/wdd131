@@ -209,7 +209,7 @@ const hotels = [
       mainImage.setAttribute("src", hotel.imageUrls[currentImageIndex]);
       nextImage.setAttribute("src", hotel.imageUrls[nextIndex]);
 
-      // (Optional) update alt texts
+      
       prevImage.setAttribute("alt", `${hotel.hotelName} - previous image`);
       prevImage.setAttribute("loading", "lazy");
       mainImage.setAttribute("alt", `${hotel.hotelName} - main image`);
@@ -360,7 +360,7 @@ function showContact() {
     
         <section class="contact-form">
             <h2>Would you like us to contact you? Send us a message!</h2>
-            <form action="siteplan.html" method="GET">
+            <form action="confirmation.html" method="GET">
                 
                     <label for="name">Your Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -466,7 +466,7 @@ const apiKey = ''; // Your API key fcbdc36c5a5d4ffb08b5e9bec15b7d19
 const cities = ['Manta', 'Quito', 'Cuenca'];
 
 async function getTemperature(city) {
-    const url = `http://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
+    const url = `https://api.weatherstack.com/current?access_key=${apiKey}&query=${city}`;
     try {
         const response = await fetch(url);
         if (!response.ok) {

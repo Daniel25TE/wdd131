@@ -6,13 +6,13 @@ html {
     text-align: center;
 }
 .confirmation {
-    background-color: rgb(0, 113, 128); /* Footer background color */
-    color: white; /* Footer text color */
-    text-align: center; /* Center text in the footer */
-    padding: 10px 0; /* Padding for the footer */
-    position: absolute; /* Position the footer absolutely */
-    bottom: 1rem; /* Align it to the bottom */
-    left: 1rem; /* Align it to the left */
+    background-color: rgb(0, 113, 128); 
+    color: white;
+    text-align: center; 
+    padding: 10px 0; 
+    position: absolute; 
+    bottom: 1rem; 
+    left: 1rem; 
     right: 1rem;
 }
 body {
@@ -133,7 +133,8 @@ section {
     padding: 2rem;
     background-color: #e4d9d9;
     border: 0.0001em solid #b6afaf;
-    margin: 3rem;
+    margin: 0rem;
+    margin-top: 1rem;
 }
 
 .location, .price, .capacity {
