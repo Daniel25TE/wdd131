@@ -462,7 +462,7 @@ function showHome() {
     `;
    
 }
-const apiKey = ''; // Your API key fcbdc36c5a5d4ffb08b5e9bec15b7d19
+const apiKey = 'fcbdc36c5a5d4ffb08b5e9bec15b7d19'; // My API key fcbdc36c5a5d4ffb08b5e9bec15b7d19
 const cities = ['Manta', 'Quito', 'Cuenca'];
 
 async function getTemperature(city) {
